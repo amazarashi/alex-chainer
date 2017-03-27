@@ -12,15 +12,19 @@ Neural Networks](https://papers.nips.cc/paper/4824-imagenet-classification-with-
 Macroarchitectural of squeezeNet
 
 # How to run
+
 git clone git@github.com:amazarashi/squeeze-chainer.git
+
 cd ./squeeze-chainer
+
 python main.py -g 1
 
 # Inspection
 
-##### dataset
+#### dataset
+
  - Cifar10 [link](https://www.cs.toronto.edu/~kriz/cifar.html)
 
-##### Result
+#### Result
 
 Coming Soon..
