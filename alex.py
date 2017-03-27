@@ -10,15 +10,15 @@ class Alex(chainer.Chain):
     def __init__(self,category_num=10):
         initializer = chainer.initializers.HeNormal()
         super(Alex, self).__init__(
-            conv1=L.Convolution2D(None,  96, 11, stride=4),
-            conv2=L.Convolution2D(None, 256,  5, pad=2),
-            conv3=L.Convolution2D(None, 384,  3, pad=1),
-            conv4=L.Convolution2D(None, 384,  3, pad=1),
-            conv5=L.Convolution2D(None, 256,  3, pad=1),
-            fc6=L.Linear(None, 4096),
-            fc7=L.Linear(None, 4096),
-            fc8=L.Linear(None, 1000),
-            fc9=L.Linear(None, category_num),
+            conv1=L.Convolution2D(3,  96, 11, stride=4,initialW=initializer),
+            conv2=L.Convolution2D(96, 256,  5, pad=2,initialW=initializer),
+            conv3=L.Convolution2D(256, 384,  3, pad=1,initialW=initializer),
+            conv4=L.Convolution2D(384, 384,  3, pad=1,initialW=initializer),
+            conv5=L.Convolution2D(384, 256,  3, pad=1,initialW=initializer),
+            fc6=L.Linear(9216, 4096,initialW=initializer),
+            fc7=L.Linear(4096, 4096,initialW=initializer),
+            fc8=L.Linear(4096, 1000,initialW=initializer),
+            fc9=L.Linear(1000, category_num),
         )
 
     def __call__(self,x,train=True):
@@ -34,10 +34,10 @@ class Alex(chainer.Chain):
         h = F.relu(self.conv4(h))
         h = F.relu(self.conv5(h))
         h = F.max_pooling_2d(h, 3, stride=2)
-        
-        h = F.dropout(F.relu(self.fc6(h)), train=self.train)
-        h = F.dropout(F.relu(self.fc7(h)), train=self.train)
-        h = F.dropout(F.relu(self.fc8(h)), train=self.train)
+
+        h = F.dropout(F.relu(self.fc6(h)), train=train)
+        h = F.dropout(F.relu(self.fc7(h)), train=train)
+        h = F.dropout(F.relu(self.fc8(h)), train=train)
         h = self.fc9(h)
         return h
 
