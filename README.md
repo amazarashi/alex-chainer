@@ -22,7 +22,7 @@ fc7=L.Linear(4096, 4096,initialW=initializer),<br/>
 fc8=L.Linear(4096, 1000),<br/>
 
 ↓<br/>
-            
+
 [CUSTOMiZED (for Cifar10)]<br/>
 fc6=L.Linear(2304, 1024,initialW=initializer),<br/>
 fc7=L.Linear(1024, 1024,initialW=initializer),<br/>
