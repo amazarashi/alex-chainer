@@ -23,14 +23,14 @@ if __name__ == '__main__':
                         help='learning rate')
 
     args = parser.parse_args().__dict__
-    lr = args.pop('lr')
+    lr = 0.01
     epoch = args.pop('epoch')
 
     model = alex.Alex(10)
     #optimizer = amaz_optimizer.OptimizerSqueeze(model,lr=lr,epoch=epoch)
-    optimizer = amaz_optimizer.OptimizerAlex(model,lr=lr,epoch=epoch)
+    optimizer = amaz_optimizer.OptimizerAlex2(model,lr=lr,epoch=epoch)
     dataset = amaz_cifar10_dl.Cifar10().loader()
-    dataaugumentation = amaz_augumentationCustom.Normalize128
+    dataaugumentation = amaz_augumentationCustom.Normalize227
     args['model'] = model
     args['optimizer'] = optimizer
     args['dataset'] = dataset
