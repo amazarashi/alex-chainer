@@ -15,9 +15,9 @@ class Alex(chainer.Chain):
             conv3=L.Convolution2D(256, 384,  3, pad=1,initialW=initializer),
             conv4=L.Convolution2D(384, 384,  3, pad=1,initialW=initializer),
             conv5=L.Convolution2D(384, 256,  3, pad=1,initialW=initializer),
-            fc6=L.Linear(2304, 1204,initialW=initializer),
-            fc7=L.Linear(1204, 1204,initialW=initializer),
-            fc8=L.Linear(1204, category_num),
+            fc6=L.Linear(2304, 1024,initialW=initializer),
+            fc7=L.Linear(1024, 1024,initialW=initializer),
+            fc8=L.Linear(1024, category_num),
         )
 
     def __call__(self,x,train=True):
