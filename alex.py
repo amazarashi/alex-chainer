@@ -15,9 +15,10 @@ class Alex(chainer.Chain):
             conv3=L.Convolution2D(256, 384,  3, pad=1,initialW=initializer),
             conv4=L.Convolution2D(384, 384,  3, pad=1,initialW=initializer),
             conv5=L.Convolution2D(384, 256,  3, pad=1,initialW=initializer),
-            fc6=L.Linear(2304, 1024,initialW=initializer),
-            fc7=L.Linear(1024, 1024,initialW=initializer),
-            fc8=L.Linear(1024, category_num),
+            fc6=L.Linear(9216, 4096,initialW=initializer),
+            fc7=L.Linear(4096, 4096,initialW=initializer),
+            fc8=L.Linear(4096, 1024),
+            fc9=L.Linear(1024, category_num),
         )
 
     def __call__(self,x,train=True):
@@ -36,7 +37,8 @@ class Alex(chainer.Chain):
 
         h = F.dropout(F.relu(self.fc6(h)), train=train)
         h = F.dropout(F.relu(self.fc7(h)), train=train)
-        h = self.fc8(h)
+        h = F.dropout(F.relu(self.fc8(h)), train=train)
+        h = self.fc9(h)
         return h
 
     def calc_loss(self,y,t):

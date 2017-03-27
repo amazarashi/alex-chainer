@@ -48,7 +48,7 @@ class OptimizerAlex(Optimizers):
 
 class OptimizerAlex2(Optimizers):
 
-    def __init__(self,model=None,lr=0.01,momentum=0.9,epoch=300,schedule=(170,250),weight_decay=1.0e-4):
+    def __init__(self,model=None,lr=0.01,momentum=0.9,epoch=300,schedule=(100,200),weight_decay=1.0e-4):
         super(OptimizerSqueeze,self).__init__(model,epoch)
         self.lr = lr
         self.optimizer = optimizers.MomentumSGD(self.lr,momentum)
