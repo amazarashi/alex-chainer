@@ -18,6 +18,7 @@ class Alex(chainer.Chain):
             fc6=L.Linear(9216, 4096),
             fc7=L.Linear(4096, 4096),
             fc8=L.Linear(4096, 1024)
+            fc8=L.Linear(1024, category_num)
         )
 
     def __call__(self,x,train=True):
@@ -31,7 +32,8 @@ class Alex(chainer.Chain):
         h = F.max_pooling_2d(F.relu(self.conv5(h)), 3, stride=2)
         h = F.dropout(F.relu(self.fc6(h)), train=train)
         h = F.dropout(F.relu(self.fc7(h)), train=train)
-        h = self.fc8(h)
+        h = F.dropout(F.relu(self.fc8(h)), train=train)
+        h = self.fc9(h)
         return h
 
     def calc_loss(self,y,t):
