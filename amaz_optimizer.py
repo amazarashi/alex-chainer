@@ -40,13 +40,9 @@ class OptimizerAlex(Optimizers):
         super(OptimizerSqueeze,self).__init__(model,epoch)
         self.lr = lr
         self.optimizer = optimizers.MomentumSGD(self.lr,momentum)
-        weight_decay = chainer.optimizer.WeightDecay(weight_decay)
         self.optimizer.setup(model)
         self.optimizer.add_hook(weight_decay)
         self.schedule = schedule
 
     def update_parameter(self,current_epoch):
-        if current_epoch in self.schedule:
-            new_lr = self.lr * 0.1
-            self.optimizer.lr = new_lr
-            print("optimizer was changed to {0}..".format(new_lr))
+        pass
