@@ -39,7 +39,7 @@ class OptimizerAlex(Optimizers):
     def __init__(self,model=None,lr=0.01,epoch=300,schedule=(150,225),weight_decay=1.0e-4):
         super(OptimizerAlex,self).__init__(model,epoch)
         self.lr = lr
-        self.optimizer = optimizers.MomentumSGD(self.lr,momentum)
+        self.optimizer = optimizers.Adam()
         self.optimizer.setup(model)
         self.optimizer.add_hook(weight_decay)
         self.schedule = schedule
