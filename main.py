@@ -23,7 +23,7 @@ if __name__ == '__main__':
                         help='learning rate')
 
     args = parser.parse_args().__dict__
-    lr = 0.01
+    lr = args.pop('lr')
     epoch = args.pop('epoch')
 
     model = alex.Alex(10)
