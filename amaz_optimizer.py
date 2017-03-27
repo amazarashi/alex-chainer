@@ -41,7 +41,6 @@ class OptimizerAlex(Optimizers):
         self.lr = lr
         self.optimizer = optimizers.Adam()
         self.optimizer.setup(model)
-        self.optimizer.add_hook(weight_decay)
         self.schedule = schedule
 
     def update_parameter(self,current_epoch):
