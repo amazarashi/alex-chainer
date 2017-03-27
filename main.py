@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     model = alex.Alex(10)
     #optimizer = amaz_optimizer.OptimizerSqueeze(model,lr=lr,epoch=epoch)
-    optimizer = optimizers.adam()
+    optimizer = optimizers.Adam()
     optimizer.setup(model)
     dataset = amaz_cifar10_dl.Cifar10().loader()
     dataaugumentation = amaz_augumentationCustom.Normalize128
