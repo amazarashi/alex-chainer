@@ -48,17 +48,17 @@ the result on each model is as followed..
 ### original AlexNet Model with batch normalization
 
 #### Accuracy
-![withBN_accuracy](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_custom/accuracy.png?raw=true "")
+![withBN_accuracy](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_original/accuracy.png?raw=true "")
 
 #### Loss
-![withBN_loss](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_custom/loss.png?raw=true "")
+![withBN_loss](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_original/loss.png?raw=true "")
 
 
 ### original AlexNet Model
 
 #### Accuracy
-![original_accuracy](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_original/accuracy.png?raw=true "")
+![original_accuracy](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_custom/accuracy.png?raw=true "")
 
 #### Loss
-![original_loss](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_original/loss.png?raw=true "")
+![original_loss](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_custom/loss.png?raw=true "")
 
