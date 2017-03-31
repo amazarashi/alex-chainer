@@ -37,27 +37,28 @@ python main.py -g 1
 
 # Inspection
 
-#### dataset
+## dataset
 
  - Cifar10 [link](https://www.cs.toronto.edu/~kriz/cifar.html)
 
-#### Result
+## Result
 In this inspection, I tried 2-types of model, original AlexNet model and original AlexNet model with batch normalization.
 the result on each model is as followed..
 
-## original AlexNet Model with batch normalization
+### original AlexNet Model with batch normalization
 
 #### Accuracy
-https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_custom/accuracy.png?raw=true
+![withBN_accuracy](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_custom/accuracy.png?raw=true "")
 
 #### Loss
-https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_custom/loss.png?raw=true
+![withBN_loss](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_custom/loss.png?raw=true "")
 
-## original AlexNet Model
+
+### original AlexNet Model
 
 #### Accuracy
-https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_original/accuracy.png?raw=true
+![original_accuracy](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_original/accuracy.png?raw=true "")
 
 #### Loss
-https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_original/loss.png?raw=true
+![original_loss](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_original/loss.png?raw=true "")
 
