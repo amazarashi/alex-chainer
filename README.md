@@ -1,5 +1,3 @@
-# ※ [STILL DEVELOPIING !!]
-
 # About
 AlexNet by chainer
 
@@ -23,10 +21,11 @@ fc8=L.Linear(4096, 1000),<br/>
 
 ↓<br/>
 
-[CUSTOMiZED (for Cifar10)]<br/>
-fc6=L.Linear(2304, 1024,initialW=initializer),<br/>
-fc7=L.Linear(1024, 1024,initialW=initializer),<br/>
-fc8=L.Linear(1024, 10),<br/>
+[ORIGINAL (for ImageNet)]<br/>
+fc6=L.Linear(9216, 4096,initialW=initializer),<br/>
+fc7=L.Linear(4096, 4096,initialW=initializer),<br/>
+fc8=L.Linear(4096, 1024,initialW=initializer),<br/>
+fc9=L.Linear(1024, 10),<br/>
 
 # How to run
 
@@ -38,10 +37,28 @@ python main.py -g 1
 
 # Inspection
 
-#### dataset
+## dataset
 
  - Cifar10 [link](https://www.cs.toronto.edu/~kriz/cifar.html)
 
-#### Result
+## Result
+In this inspection, I tried 2-types of model, original AlexNet model and original AlexNet model with batch normalization.
+the result on each model is as followed..
 
-Coming Soon..
+### original AlexNet Model with batch normalization
+
+#### Accuracy
+![withBN_accuracy](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_original/accuracy.png?raw=true "")
+
+#### Loss
+![withBN_loss](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_original/loss.png?raw=true "")
+
+
+### original AlexNet Model
+
+#### Accuracy
+![original_accuracy](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_custom/accuracy.png?raw=true "")
+
+#### Loss
+![original_loss](https://github.com/amazarashi/alex-chainer/blob/feature/bn/result/model_custom/loss.png?raw=true "")
+
